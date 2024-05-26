@@ -1,7 +1,14 @@
-export default function HomeLayout({
+import { TopMenu } from "@/components";
+
+export default function ShopLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	return <main className="bg-blue-500">{children}</main>;
+	return (
+		<main className="min-h-screen">
+			<TopMenu />
+			{children}
+		</main>
+	);
 }
