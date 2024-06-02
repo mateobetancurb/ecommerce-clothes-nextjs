@@ -5,9 +5,10 @@ const products = initialData.products;
 
 export default function Home() {
 	return (
-		<>
-			<Title title="Tienda" subtitle="Todos los productos" />
+		<main className="sm:mt-20">
+			<Title title="Inicio" subtitle="Todos los productos" />
+
 			<ProductGrid products={products} />
-		</>
+		</main>
 	);
 }
