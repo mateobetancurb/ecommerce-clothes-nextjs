@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import { initialData } from "@/seed/seed";
 import { ProductGrid, Title } from "@/components";
+import { Category } from "@/interfaces";
 
 interface Props {
 	params: {
-		id: string;
+		id: Category;
 	};
 }
 
@@ -15,20 +16,22 @@ export default function CategoryPage({ params }: Props) {
 		(product) => product.gender === id
 	);
 
-	let categoriesList = ["men", "women", "kid"];
+	const labels: Record<Category, string> = {
+		men: "Hombres",
+		women: "Mujeres",
+		kid: "Niños",
+		unisex: "Todos",
+	};
 
+	const categories = Object.keys(labels) as Category[];
+	const categoriesList = categories.map((category) => category);
 	if (!categoriesList.includes(id)) {
 		notFound();
 	}
 
 	return (
 		<div className="flex flex-col sm:mt-20 items-center justify-center min-h-screen py-2">
-			<Title
-				title={`Categoría: ${
-					id === "men" ? "Hombres" : id === "women" ? "Mujeres" : "Niños"
-				}`}
-				className="mr-auto"
-			/>
+			<Title title={`Categoría: ${labels[id]}`} className="mr-auto" />
 			<ProductGrid products={productsByCategory} />
 		</div>
 	);
