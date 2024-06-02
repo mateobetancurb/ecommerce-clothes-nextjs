@@ -9,13 +9,15 @@ interface Props {
 }
 
 export default function CategoryPage({ params }: Props) {
+	const { id } = params;
+
 	const productsByCategory = initialData.products.filter(
-		(product) => product.gender === params.id
+		(product) => product.gender === id
 	);
 
 	let categoriesList = ["men", "women", "kid"];
 
-	if (!categoriesList.includes(params.id)) {
+	if (!categoriesList.includes(id)) {
 		notFound();
 	}
 
@@ -23,11 +25,7 @@ export default function CategoryPage({ params }: Props) {
 		<div className="flex flex-col items-center justify-center min-h-screen py-2">
 			<Title
 				title={`Categoría: ${
-					params.id === "men"
-						? "Hombres"
-						: params.id === "women"
-						? "Mujeres"
-						: "Niños"
+					id === "men" ? "Hombres" : id === "women" ? "Mujeres" : "Niños"
 				}`}
 				className="mr-auto"
 			/>
