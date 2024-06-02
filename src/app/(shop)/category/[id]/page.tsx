@@ -13,12 +13,24 @@ export default function CategoryPage({ params }: Props) {
 		(product) => product.gender === params.id
 	);
 
-	if (params.id === "kids") {
+	let categoriesList = ["men", "women", "kid"];
+
+	if (!categoriesList.includes(params.id)) {
 		notFound();
 	}
 
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen py-2">
+			<Title
+				title={`Categoría: ${
+					params.id === "men"
+						? "Hombres"
+						: params.id === "women"
+						? "Mujeres"
+						: "Niños"
+				}`}
+				className="mr-auto"
+			/>
 			<ProductGrid products={productsByCategory} />
 		</div>
 	);
