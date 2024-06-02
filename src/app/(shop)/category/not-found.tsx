@@ -1,6 +1,6 @@
 import { PageNotFound } from "@/components";
 
 export default function NotFound() {
-	return <PageNotFound />;
+	return <PageNotFound text="Lo sentimos, esta categoría no existe" url="/" />;
 }
 ``;
