@@ -22,7 +22,7 @@ export default function CategoryPage({ params }: Props) {
 	}
 
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen py-2">
+		<div className="flex flex-col sm:mt-20 items-center justify-center min-h-screen py-2">
 			<Title
 				title={`Categoría: ${
 					id === "men" ? "Hombres" : id === "women" ? "Mujeres" : "Niños"
