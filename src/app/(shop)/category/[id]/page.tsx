@@ -30,7 +30,7 @@ export default function CategoryPage({ params }: Props) {
 	}
 
 	return (
-		<div className="flex flex-col sm:mt-20 items-center justify-center min-h-screen py-2">
+		<div className="flex flex-col mt-10 sm:mt-20 items-center justify-center min-h-screen py-2 w-[90%] mx-auto">
 			<Title title={`Categoría: ${labels[id]}`} className="mr-auto" />
 			<ProductGrid products={productsByCategory} />
 		</div>
