@@ -6,6 +6,7 @@ import { Swiper as SwiperObject } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
+import "./slide.css";
 
 interface Props {
 	images: string[];
@@ -37,7 +38,31 @@ export const Slide = ({ images, title, className }: Props) => {
 							height={600}
 							src={`/products/${image}`}
 							alt={title}
-							className="rounded-lg mx-auto"
+							className="rounded-lg object-fill"
+							priority
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+
+			<Swiper
+				onSwiper={setThumbsSwiper}
+				spaceBetween={10}
+				slidesPerView={4}
+				freeMode={true}
+				watchSlidesProgress={true}
+				modules={[FreeMode, Navigation, Thumbs]}
+				className="mySwiper"
+			>
+				{images.map((image) => (
+					<SwiperSlide key={image}>
+						xw
+						<Image
+							width={150}
+							height={150}
+							src={`/products/${image}`}
+							alt={title}
+							className="rounded-lg object-fill hover:cursor-pointer"
 						/>
 					</SwiperSlide>
 				))}
