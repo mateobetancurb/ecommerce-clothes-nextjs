@@ -7,7 +7,7 @@ export const TopMenu = () => {
 	const openMenu = useUIStore((state) => state.openSideMenu);
 
 	return (
-		<nav className="flex bg-black top-0 text-white fixed px-5 z-[1] justify-between items-center w-full">
+		<nav className="flex bg-black top-0 text-white fixed px-5 z-10 justify-between items-center w-full">
 			<div>
 				<Link href={"/"}>
 					<span className="antialiased font-bold">Tesla Clothes 👕</span>
