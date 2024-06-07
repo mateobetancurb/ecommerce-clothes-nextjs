@@ -7,7 +7,8 @@ export * from "./products/product-grid/ProductGridItem";
 
 export * from "./product/size-selector/SizeSelector";
 export * from "./product/quantity-selector/QuantitySelector";
-export * from "./product/slide/Slide";
+export * from "./product/slide/SlideDesktop";
+export * from "./product/slide/SlideMobile";
 
 export * from "./ui/sidebar/Sidebar";
 export * from "./global/NavigationLink";
