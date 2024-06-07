@@ -34,7 +34,7 @@ export default function ProductPage({ params }: Props) {
 				<QuantitySelector quantity={1} />
 
 				<button className="btn-primary my-5">Agregar al carrito</button>
-				<h3 className="font-bold text-sm">Descripción</h3>
+				<h3 className="font-bold">Descripción</h3>
 				<p className="font-light">{product.description}</p>
 			</div>
 		</div>
