@@ -1,4 +1,9 @@
-import { QuantitySelector, SizeSelector, Slide } from "@/components";
+import {
+	QuantitySelector,
+	SizeSelector,
+	Slide,
+	SlideMobile,
+} from "@/components";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
@@ -19,7 +24,19 @@ export default function ProductPage({ params }: Props) {
 	return (
 		<div className="sm:my-20 grid md:grid-cols-3 gap-3">
 			<div className="col-span-1 md:col-span-2 ">
-				<Slide title={product.title} images={product.images} />
+				{/* mobile slide */}
+				<SlideMobile
+					title={product.title}
+					images={product.images}
+					className="block md:hidden"
+				/>
+
+				{/* desktop slide */}
+				<Slide
+					title={product.title}
+					images={product.images}
+					className="hidden md:block"
+				/>
 			</div>
 
 			<div className="col-span-1 px-5 ">
