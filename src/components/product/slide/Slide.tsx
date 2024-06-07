@@ -56,7 +56,6 @@ export const Slide = ({ images, title, className }: Props) => {
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image}>
-						xw
 						<Image
 							width={150}
 							height={150}
