@@ -13,13 +13,13 @@ export default function CartPage() {
 	return (
 		<div className="flex justify-center items-center mb-72 px-10 sm:px-0">
 			<div className="flex flex-col w-[1000px]">
-				<Title title="Resumen de tu compra" className="mt-24 text-xl" />
+				<Title title="Carrito de compras" className="mt-32 text-2xl" />
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
 					{/* cart */}
 					<div className="flex space-y-5 flex-col mt-5">
 						<Link
 							href={"/"}
-							className="mb-5 w-fit hover:bg-black hover:text-white transition-all flex items-center p-2 rounded-md gap-3"
+							className="mb-5 w-fit bg-black text-white transition-all flex items-center p-2 rounded-md gap-3"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +81,25 @@ export default function CartPage() {
 					</div>
 
 					{/* checkout */}
-					<div className="bg-white rounded-xl shadow-xl p-7">
+					<div className="bg-white space-y-5 h-fit rounded-xl md:mt-24 shadow-xl p-7">
 						<h2 className="text-xl font-bold mb-2">Resumen de orden</h2>
 						<div className="grid grid-cols-2">
-							<span>No. Productos</span>
-							<span className="text-right">3 artículos</span>
+							<span>Cantidad de artículos</span>
+							<span className="text-right">3</span>
+							<span>Subtotal</span>
+							<span className="text-right">$100</span>
+							<span>Impuestos</span>
+							<span className="mb-3 text-right">$100</span>
+							<span className="font-bold text-xl">Total</span>
+							<span className="font-bold text-xl mb-5 text-right">$100</span>
+						</div>
+						<div>
+							<Link
+								className="flex justify-center btn-primary"
+								href={"/checkout/address"}
+							>
+								Pagar
+							</Link>
 						</div>
 					</div>
 				</div>
