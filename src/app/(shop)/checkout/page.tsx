@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { QuantitySelector, Title } from "@/components";
+import { Title } from "@/components";
 import { initialData } from "@/seed/seed";
 
 const productsInCart = [
@@ -9,7 +9,7 @@ const productsInCart = [
 	initialData.products[2],
 ];
 
-export default function CartPage() {
+export default function CheckoutPage() {
 	return (
 		<div className="flex justify-center items-center mb-72 px-10 sm:px-0">
 			<div className="flex flex-col w-[1000px]">
