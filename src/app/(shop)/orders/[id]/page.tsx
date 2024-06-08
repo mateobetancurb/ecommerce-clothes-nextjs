@@ -25,7 +25,7 @@ export default function OrderPage({ params }: Props) {
 				<div className="grid grid-cols-1 sm:grid-cols-2  gap-10">
 					<div className="bg-white space-y-5 h-fit rounded-xl shadow-xl p-7">
 						<div
-							className={`flex gap-3 text-white p-2 rounded-md ${
+							className={`flex gap-3 text-white p-2 rounded-md items-center ${
 								isPayOrder ? "bg-green-700" : "bg-red-700"
 							}`}
 						>
@@ -35,14 +35,15 @@ export default function OrderPage({ params }: Props) {
 								viewBox="0 0 24 24"
 								strokeWidth={1.5}
 								stroke="currentColor"
-								className="size-6"
+								className="size-5"
 							>
 								<path
 									strokeLinecap="round"
 									strokeLinejoin="round"
-									d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+									d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
 								/>
 							</svg>
+
 							{isPayOrder ? "Pagada" : "Pendiente por pagar"}
 						</div>
 						<h2 className="text-xl font-bold mb-2">Dirección de entrega</h2>
@@ -64,9 +65,23 @@ export default function OrderPage({ params }: Props) {
 							<span className="font-bold text-xl mb-5 text-right">$100</span>
 						</div>
 						<Link
-							className="flex justify-center transition-all bg-green-700 text-white p-2 rounded-md hover:bg-green-600"
+							className="flex gap-2 justify-center transition-all bg-green-700 text-white p-2 rounded-md hover:bg-green-600"
 							href={"/orders/123"}
 						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth={1.5}
+								stroke="currentColor"
+								className="size-6"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+								/>
+							</svg>
 							Pagar
 						</Link>
 					</div>
