@@ -50,7 +50,7 @@ export default function CheckoutPage() {
 								/>
 								<div>
 									<p>{product.title}</p>
-									<p className="">Valor unidad: ${product.price}</p>
+									<p>Valor unidad: ${product.price}</p>
 									<p>Cantidad: 3</p>
 									<p className="font-bold">Subtotal: ${product.price * 3}</p>
 								</div>
