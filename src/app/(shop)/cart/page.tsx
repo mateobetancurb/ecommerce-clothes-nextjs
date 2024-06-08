@@ -98,7 +98,7 @@ export default function CartPage() {
 								className="flex transition-all justify-center btn-primary"
 								href={"/checkout/address"}
 							>
-								Pagar
+								Siguiente
 							</Link>
 						</div>
 					</div>
