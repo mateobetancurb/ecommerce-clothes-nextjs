@@ -49,9 +49,11 @@ export default function CartPage() {
 									className="mr-5 rounded"
 								/>
 								<div>
-									<div className="flex gap-20">
+									<div className="grid grid-cols-2">
 										<p>{product.title}</p>
-										<p className="font-bold text-xl">${product.price}</p>
+										<p className="font-bold text-xl text-right">
+											${product.price}
+										</p>
 									</div>
 									<div className="flex items-center justify-between">
 										<QuantitySelector quantity={3} />
@@ -79,7 +81,13 @@ export default function CartPage() {
 					</div>
 
 					{/* checkout */}
-					<div className=""></div>
+					<div className="bg-white rounded-xl shadow-xl p-7">
+						<h2 className="text-xl font-bold mb-2">Resumen de orden</h2>
+						<div className="grid grid-cols-2">
+							<span>No. Productos</span>
+							<span className="text-right">3 artículos</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
