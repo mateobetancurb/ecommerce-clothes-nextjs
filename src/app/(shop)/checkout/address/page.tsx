@@ -57,7 +57,7 @@ export default function AddressPage() {
 					<div className="flex flex-col mb-2 sm:mt-10">
 						<Link
 							href="/checkout"
-							className="btn-primary flex w-full sm:w-1/2 justify-center "
+							className="btn-primary transition-all flex w-full sm:w-1/2 justify-center "
 						>
 							Siguiente
 						</Link>
