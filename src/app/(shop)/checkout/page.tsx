@@ -62,7 +62,7 @@ export default function CheckoutPage() {
 					<div className="bg-white space-y-5 h-fit rounded-xl md:mt-24 shadow-xl p-7">
 						<h2 className="text-xl font-bold mb-2">Dirección de entrega</h2>
 						<div>
-							<p>Fernando Herrera</p>
+							<p>Sussana Correa</p>
 							<p>Av. Playa</p>
 							<p>Teléfono</p>
 						</div>
