@@ -33,16 +33,16 @@ async function main() {
 				// products
 				...rest,
 				categoryId: categoriesMap[type],
-
-				// images
-				ProductImage: {
-					createMany: {
-						data: images.map((image) => ({
-							url: image,
-						})),
-					},
-				},
 			},
+		});
+
+		const imagesData = images.map((image) => ({
+			url: image,
+			productId: dbProduct.id,
+		}));
+
+		await prisma.productImage.createMany({
+			data: imagesData,
 		});
 	});
 
