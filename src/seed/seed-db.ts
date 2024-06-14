@@ -3,11 +3,9 @@ import prisma from "../lib/prisma";
 
 async function main() {
 	// clean up the database before seeding
-	await Promise.all([
-		prisma.productImage.deleteMany(),
-		prisma.product.deleteMany(),
-		prisma.category.deleteMany(),
-	]);
+	await prisma.productImage.deleteMany();
+	await prisma.product.deleteMany();
+	await prisma.category.deleteMany();
 
 	// categories created in DB
 	const { categories, products } = initialData;
@@ -30,12 +28,12 @@ async function main() {
 		const { type, images, ...rest } = product;
 		const dbProduct = await prisma.product.create({
 			data: {
-				// products
 				...rest,
 				categoryId: categoriesMap[type],
 			},
 		});
 
+		// images
 		const imagesData = images.map((image) => ({
 			url: image,
 			productId: dbProduct.id,
