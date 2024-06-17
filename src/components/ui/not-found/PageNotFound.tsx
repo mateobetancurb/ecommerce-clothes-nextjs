@@ -8,7 +8,7 @@ interface Props {
 
 export const PageNotFound = ({ text, url }: Props) => {
 	return (
-		<div className="flex-row w-full align-middle">
+		<div className="flex-row mb-20 w-full align-middle">
 			<div className="">
 				<Image
 					src={"/imgs/starman_750x750.png"}
