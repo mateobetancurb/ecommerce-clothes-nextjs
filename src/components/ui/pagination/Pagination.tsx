@@ -68,9 +68,7 @@ export const Pagination = ({ totalPages }: Props) => {
 						<li key={page + "-" + index} className="page-item">
 							<Link
 								className={`page-link relative block py-1.5 px-3  border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${
-									page === currentPage
-										? "bg-gray-900 text-white rounded-md font-bold"
-										: ""
+									page === currentPage ? "font-bold bg-gray-400" : ""
 								}`}
 								href={createPageUrl(page)}
 							>
