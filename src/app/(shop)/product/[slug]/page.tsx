@@ -7,6 +7,7 @@ import {
 	SizeSelector,
 	Slide,
 	SlideMobile,
+	StockLabel,
 } from "@/components";
 
 interface Props {
@@ -44,6 +45,8 @@ export default async function ProductPage({ params }: Props) {
 			<div className="col-span-1 px-5 ">
 				<h1 className="antialiased font-bold text-xl">{product.title}</h1>
 				<p className="text-lg mb-5 ">${product.price}</p>
+
+				<StockLabel slug={product.slug} />
 
 				<SizeSelector
 					selectedSize={product.sizes[0]}
