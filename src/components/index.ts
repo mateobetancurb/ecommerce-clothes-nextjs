@@ -12,5 +12,6 @@ export * from "./product/size-selector/SizeSelector";
 export * from "./product/quantity-selector/QuantitySelector";
 export * from "./product/slide/SlideDesktop";
 export * from "./product/slide/SlideMobile";
+export * from "./product/stock-label/StockLabel";
 
 export * from "./global/NavigationLink";
