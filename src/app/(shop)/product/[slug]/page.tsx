@@ -23,7 +23,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const slug = params.slug;
 	const product = await getProductBySlug(slug);
-	const previousImages = (await parent).openGraph?.images || [];
 
 	return {
 		title: product?.title ?? "Producto no encontrado",
