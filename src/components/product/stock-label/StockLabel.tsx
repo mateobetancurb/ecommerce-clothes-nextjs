@@ -28,8 +28,14 @@ export const StockLabel = ({ slug }: Props) => {
 	};
 
 	return (
-		<p className="antialiased">
-			Unidades disponibles: {isLoading ? "Cargando..." : stock}
-		</p>
+		<>
+			{isLoading ? (
+				<p className="antialiased animate-pulse bg-gray-200 rounded-md w-1/2">
+					&nbsp;
+				</p>
+			) : (
+				<p className="antialiased">Unidades disponibles: {stock}</p>
+			)}
+		</>
 	);
 };
