@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Title } from "@/components";
 import { ProductsInCart } from "./ui/ProductsInCart";
+import { OrderSummay } from "./ui/OrderSummay";
 
 export default function CartPage() {
 	return (
@@ -35,28 +36,7 @@ export default function CartPage() {
 						<ProductsInCart />
 					</div>
 
-					{/* checkout */}
-					<div className="bg-white space-y-5 h-fit rounded-xl md:mt-24 shadow-xl p-7">
-						<h2 className="text-xl font-bold mb-2">Resumen de orden</h2>
-						<div className="grid grid-cols-2">
-							<span>Cantidad de artículos</span>
-							<span className="text-right">3</span>
-							<span>Subtotal</span>
-							<span className="text-right">$100</span>
-							<span>Impuestos</span>
-							<span className="mb-3 text-right">$100</span>
-							<span className="font-bold text-xl">Total</span>
-							<span className="font-bold text-xl mb-5 text-right">$100</span>
-						</div>
-						<div>
-							<Link
-								className="flex transition-all justify-center btn-primary"
-								href={"/checkout/address"}
-							>
-								Siguiente
-							</Link>
-						</div>
-					</div>
+					<OrderSummay />
 				</div>
 			</div>
 		</div>
