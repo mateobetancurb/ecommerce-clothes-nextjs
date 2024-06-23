@@ -10,6 +10,7 @@ import {
 	SlideMobile,
 	StockLabel,
 } from "@/components";
+import { AddToCart } from "./ui/AddToCart";
 
 interface Props {
 	params: {
@@ -67,16 +68,10 @@ export default async function ProductPage({ params }: Props) {
 
 				<StockLabel slug={product.slug} />
 
-				<SizeSelector
-					selectedSize={product.sizes[0]}
-					availableSizes={product.sizes}
-				/>
-
-				<QuantitySelector quantity={1} />
+				<AddToCart product={product} />
 
 				<h3 className="font-bold">Descripción</h3>
 				<p>{product.description}</p>
-				<button className="btn-primary my-5">Agregar al carrito</button>
 			</div>
 		</div>
 	);
