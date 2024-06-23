@@ -45,7 +45,9 @@ export const useCartStore = create<State>()(
 			addProductToCart: (product: CartProduct) => {
 				const { cart } = get();
 
-				const productInCart = cart.some((item) => item.id === product.id);
+				const productInCart = cart.some(
+					(item) => item.id === product.id && item.size === product.size
+				);
 
 				if (!productInCart) {
 					set({ cart: [...cart, product] });
@@ -54,13 +56,12 @@ export const useCartStore = create<State>()(
 
 				const updatedCartProducts = cart.map((item) => {
 					if (item.id === product.id && item.size === product.size) {
-						return {
-							...item,
-							quantity: item.quantity + product.quantity,
-						};
+						return { ...item, quantity: item.quantity + product.quantity };
 					}
+
 					return item;
 				});
+
 				set({ cart: updatedCartProducts });
 			},
 
