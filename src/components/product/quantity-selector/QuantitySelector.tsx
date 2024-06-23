@@ -1,20 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
 interface Props {
 	quantity: number;
+	onQuantityChanged: (value: number) => void;
 }
 
-export const QuantitySelector = ({ quantity }: Props) => {
-	const [counter, setCounter] = useState(quantity);
+export const QuantitySelector = ({ quantity, onQuantityChanged }: Props) => {
+	const onValueChanged = (value: number) => {
+		if (quantity + value < 1) return;
 
-	const onQuantityChange = (value: number) => {
-		if (counter + value < 1) return;
+		if (quantity + value > 5) return;
 
-		if (counter + value > 5) return;
-
-		setCounter(counter + value);
+		onQuantityChanged(quantity + value);
 	};
 
 	return (
@@ -22,7 +19,7 @@ export const QuantitySelector = ({ quantity }: Props) => {
 			<h2 className="font-bold mb-2">Cantidad</h2>
 			<div className="flex items-center gap-4 ">
 				<button
-					onClick={() => onQuantityChange(-1)}
+					onClick={() => onValueChanged(-1)}
 					className="hover:bg-red-300 rounded-full transition-all"
 				>
 					<svg
@@ -40,9 +37,9 @@ export const QuantitySelector = ({ quantity }: Props) => {
 						/>
 					</svg>
 				</button>
-				<span className="text-xl">{counter}</span>
+				<span className="text-xl">{quantity}</span>
 				<button
-					onClick={() => onQuantityChange(+1)}
+					onClick={() => onValueChanged(+1)}
 					className="hover:bg-green-300 rounded-full transition-all"
 				>
 					<svg
