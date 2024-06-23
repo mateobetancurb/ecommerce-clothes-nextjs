@@ -12,6 +12,9 @@ export const ProductsInCart = () => {
 	const updateProductQuantity = useCartStore(
 		(state) => state.updateProductQuantity
 	);
+	const deleteProductFromCart = useCartStore(
+		(state) => state.deleteProductFromCart
+	);
 
 	useEffect(() => {
 		setIsLoaded(true);
@@ -55,7 +58,10 @@ export const ProductsInCart = () => {
 											updateProductQuantity(product, value)
 										}
 									/>
-									<button className="hover:bg-red-300 hover:p-2 transition-all rounded-full">
+									<button
+										onClick={() => deleteProductFromCart(product)}
+										className="hover:bg-red-300 hover:p-2 transition-all rounded-full"
+									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
