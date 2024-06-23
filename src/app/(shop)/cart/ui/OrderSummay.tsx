@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store";
+import { currencyFormat } from "@/utils";
 
 export const OrderSummay = () => {
 	const orderSummay = useCartStore((state) => state.getSummaryInformation());
@@ -24,12 +25,16 @@ export const OrderSummay = () => {
 						<span>Cantidad de artículos</span>
 						<span className="text-right">{orderSummay.totalItems}</span>
 						<span>Subtotal</span>
-						<span className="text-right">${orderSummay.subTotal}</span>
+						<span className="text-right">
+							{currencyFormat(orderSummay.subTotal)}
+						</span>
 						<span>Impuestos</span>
-						<span className="mb-3 text-right">${orderSummay.taxes}</span>
+						<span className="mb-3 text-right">
+							{currencyFormat(orderSummay.taxes)}
+						</span>
 						<span className="font-bold text-xl">Total</span>
 						<span className="font-bold text-xl mb-5 text-right">
-							${orderSummay.total}
+							{currencyFormat(orderSummay.total)}
 						</span>
 					</div>
 					<div>
