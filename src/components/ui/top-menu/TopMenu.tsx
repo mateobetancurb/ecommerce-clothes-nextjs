@@ -1,10 +1,18 @@
 "use client";
 
-import { useUIStore } from "@/store";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useUIStore, useCartStore } from "@/store";
 
 export const TopMenu = () => {
 	const openMenu = useUIStore((state) => state.openSideMenu);
+	const shoppingCartTotalItems = useCartStore((state) => state.getTotalItems());
+
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
 
 	return (
 		<nav className="flex bg-black top-0 text-white fixed px-5 z-10 justify-between items-center w-full">
@@ -54,9 +62,11 @@ export const TopMenu = () => {
 				</Link>
 				<Link href={"/cart"}>
 					<div className="relative">
-						<span className="absolute text-xs rounded-full px-1 font-bold -top-2 -right-2 bg-blue-700 text-white">
-							3
-						</span>
+						{isLoaded && shoppingCartTotalItems > 0 && (
+							<span className="absolute text-xs rounded-full px-1 font-bold -top-2 -right-2 bg-blue-700 text-white">
+								{shoppingCartTotalItems}
+							</span>
+						)}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
