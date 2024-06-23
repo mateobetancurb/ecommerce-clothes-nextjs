@@ -7,29 +7,35 @@ interface State {
 	addProductToCart: (product: CartProduct) => void;
 }
 
-export const useCartStore = create<State>()((set, get) => ({
-	cart: [],
+export const useCartStore = create<State>()(
+	persist(
+		(set, get) => ({
+			cart: [],
 
-	addProductToCart: (product: CartProduct) => {
-		const { cart } = get();
-		console.log(cart);
+			addProductToCart: (product: CartProduct) => {
+				const { cart } = get();
 
-		const productInCart = cart.some((item) => item.id === product.id);
+				const productInCart = cart.some((item) => item.id === product.id);
 
-		if (!productInCart) {
-			set({ cart: [...cart, product] });
-			return;
+				if (!productInCart) {
+					set({ cart: [...cart, product] });
+					return;
+				}
+
+				const updatedCartProducts = cart.map((item) => {
+					if (item.id === product.id && item.size === product.size) {
+						return {
+							...item,
+							quantity: item.quantity + product.quantity,
+						};
+					}
+					return item;
+				});
+				set({ cart: updatedCartProducts });
+			},
+		}),
+		{
+			name: "shopping-cart",
 		}
-
-		const updatedCartProducts = cart.map((item) => {
-			if (item.id === product.id && item.size === product.size) {
-				return {
-					...item,
-					quantity: item.quantity + product.quantity,
-				};
-			}
-			return item;
-		});
-		set({ cart: updatedCartProducts });
-	},
-}));
+	)
+);
