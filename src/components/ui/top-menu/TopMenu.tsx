@@ -9,6 +9,7 @@ export const TopMenu = () => {
 	const shoppingCartTotalItems = useCartStore((state) => state.getTotalItems());
 
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [isShoppingCartEmpty, setIsShoppingCartEmpty] = useState<boolean>(true);
 
 	useEffect(() => {
 		setIsLoaded(true);
@@ -60,10 +61,12 @@ export const TopMenu = () => {
 						/>
 					</svg>
 				</Link>
-				<Link href={"/cart"}>
+				<Link
+					href={shoppingCartTotalItems === 0 && isLoaded ? "/empty" : "/cart"}
+				>
 					<div className="relative">
 						{isLoaded && shoppingCartTotalItems > 0 && (
-							<span className="absolute text-xs rounded-full px-1 font-bold -top-2 -right-2 bg-blue-700 text-white">
+							<span className="fade-in absolute text-xs rounded-full px-1 font-bold -top-2 -right-2 bg-blue-700 text-white">
 								{shoppingCartTotalItems}
 							</span>
 						)}
