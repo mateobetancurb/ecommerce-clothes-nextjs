@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store";
 import { currencyFormat } from "@/utils";
+import { useRouter } from "next/navigation";
 
 export const OrderSummay = () => {
+	const router = useRouter();
 	const orderSummay = useCartStore((state) => state.getSummaryInformation());
 
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -13,6 +15,12 @@ export const OrderSummay = () => {
 	useEffect(() => {
 		setIsLoaded(true);
 	}, []);
+
+	useEffect(() => {
+		if (orderSummay.totalItems === 0 && isLoaded === true) {
+			router.replace("/empty");
+		}
+	}, [orderSummay.totalItems, isLoaded]);
 
 	if (!isLoaded) return <p>Cargando...</p>;
 
