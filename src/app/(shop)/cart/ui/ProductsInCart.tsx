@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { QuantitySelector } from "@/components";
 import { useCartStore } from "@/store";
-import Link from "next/link";
 
 export const ProductsInCart = () => {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const productsInCart = useCartStore((state) => state.cart);
+	const updateProductQuantity = useCartStore(
+		(state) => state.updateProductQuantity
+	);
 
 	useEffect(() => {
 		setIsLoaded(true);
@@ -47,8 +50,10 @@ export const ProductsInCart = () => {
 								<p>Talla: {product.size}</p>
 								<div className="flex items-center justify-between">
 									<QuantitySelector
-										quantity={3}
-										onQuantityChanged={(value) => console.log(value)}
+										quantity={product.quantity}
+										onQuantityChanged={(value) =>
+											updateProductQuantity(product, value)
+										}
 									/>
 									<button className="hover:bg-red-300 hover:p-2 transition-all rounded-full">
 										<svg
