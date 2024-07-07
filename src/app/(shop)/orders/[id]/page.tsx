@@ -96,6 +96,7 @@ export default function OrderPage({ params }: Props) {
 									width={150}
 									height={150}
 									className="mr-5 rounded"
+									priority
 								/>
 								<div>
 									<p>{product.title}</p>

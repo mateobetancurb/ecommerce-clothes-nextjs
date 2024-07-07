@@ -36,6 +36,7 @@ export const ProductsInCart = () => {
 								width={150}
 								height={150}
 								className="mr-5 rounded"
+								priority
 							/>
 							<div>
 								<div className="grid grid-cols-2">
