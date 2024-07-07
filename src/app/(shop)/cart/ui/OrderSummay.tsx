@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCartStore } from "@/store";
 import { currencyFormat } from "@/utils";
-import { useRouter } from "next/navigation";
 
 export const OrderSummay = () => {
 	const router = useRouter();
