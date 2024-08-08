@@ -1,15 +1,11 @@
 export interface Product {
 	id: string;
 	description: string;
-	images: string[];
-	inStock: number;
+	category: object;
+	creationAt: string;
 	price: number;
-	sizes: Size[];
-	slug: string;
-	tags: string[];
+	images: string[];
 	title: string;
-	// type: Type;
-	gender: Category;
 }
 
 export interface CartProduct {
@@ -18,10 +14,5 @@ export interface CartProduct {
 	title: string;
 	price: number;
 	quantity: number;
-	size: Size;
 	image: string;
 }
-
-export type Category = "men" | "women" | "kid" | "unisex";
-export type Size = "XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL";
-export type Type = "shirts" | "pants" | "hoodies" | "hats";
