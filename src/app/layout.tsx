@@ -3,8 +3,8 @@ import { inter } from "@/config/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Tesla Clothes 👕",
-	description: "Tienda de ropa",
+	title: " Tienda de ropa 👕",
+	description: "La mejor tienda de ropa del 🌎",
 };
 
 export default function RootLayout({

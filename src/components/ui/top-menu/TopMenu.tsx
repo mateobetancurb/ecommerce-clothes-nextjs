@@ -19,7 +19,7 @@ export const TopMenu = () => {
 		<nav className="flex bg-black top-0 text-white fixed px-5 z-10 justify-between items-center w-full">
 			<div>
 				<Link href={"/"}>
-					<span className="antialiased font-bold">Tesla Clothes 👕</span>
+					<span className="antialiased font-bold">Tienda de ropa 👕</span>
 				</Link>
 			</div>
 
