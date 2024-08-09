@@ -2,15 +2,9 @@ export const revalidate = 604800;
 
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
-import {
-	QuantitySelector,
-	SizeSelector,
-	Slide,
-	SlideMobile,
-	StockLabel,
-} from "@/components";
+import { QuantitySelector, Slide, SlideMobile } from "@/components";
 import { AddToCart } from "./ui/AddToCart";
-import { getProductById } from "@/actions";
+// import { getProductById } from "@/actions";
 
 interface Props {
 	params: {
@@ -38,8 +32,8 @@ interface Props {
 
 export default async function ProductPage({ params }: Props) {
 	const { id } = params;
-	const product = await getProductById(id);
-	console.log(product);
+	// const product = await getProductById(id);
+	// console.log(product);
 
 	// if (!product) {
 	// 	notFound();

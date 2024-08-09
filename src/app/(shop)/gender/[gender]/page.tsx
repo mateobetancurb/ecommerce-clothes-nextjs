@@ -29,7 +29,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 	return (
 		<div className="flex flex-col mt-10 sm:mt-20 items-center justify-center min-h-screen py-2 w-[90%] mx-auto">
 			<Title title={`Categoría: ${labels[gender]}`} className="mr-auto" />
-			<ProductGrid products={products} />
+			{/* <ProductGrid products={products} /> */}
 		</div>
 	);
 }
