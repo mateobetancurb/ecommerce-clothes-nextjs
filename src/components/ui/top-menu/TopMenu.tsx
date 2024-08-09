@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useUIStore, useCartStore } from "@/store";
+import { useUIStore } from "@/store";
 
 export const TopMenu = () => {
 	const openMenu = useUIStore((state) => state.openSideMenu);
-	const shoppingCartTotalItems = useCartStore((state) => state.getTotalItems());
 
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isShoppingCartEmpty, setIsShoppingCartEmpty] = useState<boolean>(true);
@@ -61,7 +60,7 @@ export const TopMenu = () => {
 						/>
 					</svg>
 				</Link>
-				<Link
+				{/* <Link
 					href={shoppingCartTotalItems === 0 && isLoaded ? "/empty" : "/cart"}
 				>
 					<div className="relative">
@@ -85,7 +84,7 @@ export const TopMenu = () => {
 							/>
 						</svg>
 					</div>
-				</Link>
+				</Link> */}
 				<button
 					onClick={openMenu}
 					className="m-2 p-2 rounded-md transition-all hover:bg-gray-100 hover:text-black"
