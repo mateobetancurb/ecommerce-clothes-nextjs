@@ -8,10 +8,8 @@ export * from "./ui/pagination/Pagination";
 export * from "./products/product-grid/ProductGrid";
 export * from "./products/product-grid/ProductGridItem";
 
-export * from "./product/size-selector/SizeSelector";
 export * from "./product/quantity-selector/QuantitySelector";
 export * from "./product/slide/SlideDesktop";
 export * from "./product/slide/SlideMobile";
-export * from "./product/stock-label/StockLabel";
 
 export * from "./global/NavigationLink";
