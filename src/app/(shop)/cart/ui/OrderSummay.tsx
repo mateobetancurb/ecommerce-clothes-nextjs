@@ -3,12 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCartStore } from "@/store";
 import { currencyFormat } from "@/utils";
 
 export const OrderSummay = () => {
 	const router = useRouter();
-	const orderSummay = useCartStore((state) => state.getSummaryInformation());
 
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
@@ -16,17 +14,18 @@ export const OrderSummay = () => {
 		setIsLoaded(true);
 	}, []);
 
-	useEffect(() => {
-		if (orderSummay.totalItems === 0 && isLoaded === true) {
-			router.replace("/empty");
-		}
-	}, [orderSummay.totalItems, isLoaded]);
+	// useEffect(() => {
+	// 	if (orderSummay.totalItems === 0 && isLoaded === true) {
+	// 		router.replace("/empty");
+	// 	}
+	// }, [orderSummay.totalItems, isLoaded]);
 
 	if (!isLoaded) return <p>Cargando...</p>;
 
 	return (
 		<>
-			{isLoaded && (
+			<p>order summary</p>
+			{/* {isLoaded && (
 				<div className="bg-white space-y-5 h-fit rounded-xl md:mt-24 shadow-xl p-7">
 					<h2 className="text-xl font-bold mb-2">Resumen de orden</h2>
 					<div className="grid grid-cols-2">
@@ -54,7 +53,7 @@ export const OrderSummay = () => {
 						</Link>
 					</div>
 				</div>
-			)}
+			)} */}
 		</>
 	);
 };

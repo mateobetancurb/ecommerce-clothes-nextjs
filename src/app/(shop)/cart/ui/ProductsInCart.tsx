@@ -4,17 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { QuantitySelector } from "@/components";
-import { useCartStore } from "@/store";
 
 export const ProductsInCart = () => {
 	const [isLoaded, setIsLoaded] = useState(false);
-	const productsInCart = useCartStore((state) => state.cart);
-	const updateProductQuantity = useCartStore(
-		(state) => state.updateProductQuantity
-	);
-	const deleteProductFromCart = useCartStore(
-		(state) => state.deleteProductFromCart
-	);
 
 	useEffect(() => {
 		setIsLoaded(true);
@@ -26,7 +18,15 @@ export const ProductsInCart = () => {
 
 	return (
 		<>
-			{isLoaded && productsInCart.length > 0 && (
+			<div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+					voluptas ipsam accusamus distinctio explicabo minima nihil
+					accusantium, laboriosam, quaerat praesentium, aut enim. Nam magni ipsa
+					nesciunt inventore explicabo optio est.
+				</p>
+			</div>
+			{/* {isLoaded && productsInCart.length > 0 && (
 				<>
 					{productsInCart.map((product) => (
 						<div key={`${product.slug}-${product.size}`} className="flex">
@@ -83,7 +83,7 @@ export const ProductsInCart = () => {
 						</div>
 					))}
 				</>
-			)}
+			)} */}
 		</>
 	);
 };

@@ -1,5 +1,5 @@
 import { ProductGrid, Title } from "@/components";
-import { getAllProducts } from "@/actions";
+import { getAllProducts } from "@/actions/products/get-products";
 
 export default async function Home() {
 	const products = await getAllProducts();
