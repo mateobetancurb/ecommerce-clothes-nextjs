@@ -7,11 +7,7 @@ interface Props {
 
 export const getProductById = async ({ id }: Props) => {
 	try {
-		const { data } = axios.get(
-			`https://api.escuelajs.co/api/v1/products/${id}`
-		);
-		console.log(data);
-
+		const data = axios.get(`https://api.escuelajs.co/api/v1/products/${id}`);
 		return data;
 	} catch (error) {
 		throw new Error("error fetching product by id from api");

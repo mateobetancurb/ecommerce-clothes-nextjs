@@ -7,6 +7,7 @@ export const getAllProducts = async () => {
 		const { data } = await axios.get(
 			"https://api.escuelajs.co/api/v1/products"
 		);
+
 		return data;
 	} catch (error) {
 		throw new Error("error fetching products from api");
