@@ -31,7 +31,9 @@ interface Props {
 // }
 
 export default async function ProductPage({ params }: Props) {
-	const { id } = params;
+	console.log(params.id);
+
+	// const { id } = params;
 	// const product = await getProductById(id);
 	// console.log(product);
 
@@ -41,7 +43,7 @@ export default async function ProductPage({ params }: Props) {
 
 	return (
 		<div>
-			<h1>ProductPage</h1>
+			<h1 className="mt-32">ProductPage {params.id}</h1>
 		</div>
 		// <div className="sm:my-20 grid md:grid-cols-3 gap-3">
 		// 	<div className="col-span-1 md:col-span-2 ">
