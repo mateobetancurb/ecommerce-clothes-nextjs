@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const getAllProducts = async () => {
 	try {
-		const { data } = await axios.get("https://fakestoreapi.com/products");
+		const { data } = await axios.get(`${process.env.API_BASE_URL}/products`);
 		return data;
 	} catch (error) {
 		if (axios.isAxiosError(error)) {
