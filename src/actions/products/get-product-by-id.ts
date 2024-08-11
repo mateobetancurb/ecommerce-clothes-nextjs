@@ -7,9 +7,13 @@ interface Props {
 
 export const getProductById = async ({ id }: Props) => {
 	try {
-		const data = axios.get(`https://api.escuelajs.co/api/v1/products/${id}`);
+		const data = await axios.get(`${process.env.API_BASE_URL}/products/${id}`);
 		return data;
 	} catch (error) {
-		throw new Error("error fetching product by id from api");
+		if (axios.isAxiosError(error)) {
+			throw new Error(`Error de red: ${error.message}`);
+		} else {
+			throw new Error("Error desconocido al obtener productos");
+		}
 	}
 };
