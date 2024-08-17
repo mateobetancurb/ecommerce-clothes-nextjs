@@ -81,7 +81,7 @@ export const Sidebar = () => {
 						),
 					}}
 				/>
-				<NavigationLink
+				{/* <NavigationLink
 					linkInfo={{
 						url: "/",
 						text: "Iniciar sesión",
@@ -102,8 +102,8 @@ export const Sidebar = () => {
 							</svg>
 						),
 					}}
-				/>
-				<NavigationLink
+				/> */}
+				{/* <NavigationLink
 					linkInfo={{
 						url: "/",
 						text: "Salir",
@@ -124,7 +124,7 @@ export const Sidebar = () => {
 							</svg>
 						),
 					}}
-				/>
+				/> */}
 
 				<div className="w-full h-px bg-gray-200 my-5" />
 
