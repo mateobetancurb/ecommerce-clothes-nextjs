@@ -77,7 +77,8 @@ async function ProductContent({ params }: Props) {
 					<p className="text-lg mb-5 ">${product.data.price}</p>
 
 					<h3 className="font-bold">Descripción</h3>
-					<p>{product.data.description}</p>
+					<p className="mb-5">{product.data.description}</p>
+					<AddToCart product={product.data} />
 				</div>
 			</div>
 		</>
